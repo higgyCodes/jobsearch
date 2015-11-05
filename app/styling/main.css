@@ -1,0 +1,12 @@
+* {
+	border-width: 1px;
+	border-color: black;
+	border-style: solid;
+}
+
+div.form-group {
+	border-width: 2px;
+	color: blue;
+	padding: 14px;
+	max-width: 400px;
+}
