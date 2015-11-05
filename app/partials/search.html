@@ -1,0 +1,47 @@
+<div class="form-group">
+	    <label for="exampleJob">Job</label>
+	    <input ng-model="entry.jobtitle" class="form-control" id="exampleJob" placeholder="What job are you looking for?">
+	  </div>
+	  <div class="form-group">
+	    <label for="exampleLocation">Location</label>
+	    <input class="form-control" id="exampleLocation" placeholder="Location">
+	  </div>
+	  <!-- Single button -->
+	<div class="btn-group">
+	  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	    Type of Work? <span class="caret"></span>
+	  </button>
+	  <ul class="dropdown-menu">
+	  <li><a href="#">All Types</a></li>
+	    <li role="separator" class="divider"></li>
+	    <li><a href="#">Fulltime</a></li>
+	    <li><a href="#">Contract</a></li>
+	    <li><a href="#">Internship</a></li>
+	    <li><a href="#">Part-time</a></li>
+	    <li><a href="#">Temporary</a></li>
+	  </ul>
+
+	  <div class="form-group">
+	    <label for="exampleLocation">How much should you be paid?</label>
+	    <label for="exampleLocation">Between</label>
+	    
+	    <input class="form-control" id="exampleLocation" placeholder="bottomend">
+	    <label for="exampleLocation">and</label>
+	    <input class="form-control" id="exampleLocation" placeholder="topend">
+	  </div>
+	  <div class="form-group">
+	    <label for="exampleInputFile">Area Covered</label>
+	    <input id="exampleInputFile">
+	    <p class="help-block">Example block-level help text here.</p>
+	  </div>
+	  <div class="checkbox">
+	    <label>
+	      <input type="checkbox"> Check me out
+	    </label>
+	  </div>
+	  <button type="submit" ng-click="gregory()" class="btn btn-default">Submit</button>
+	</form>
+	<!--Controller Test -->
+	<pre>{{test}}</pre>
+	<pre ng-bind="testmodel"></pre>
+</div>

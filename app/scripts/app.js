@@ -2,12 +2,12 @@ var jobSearch = angular.module('jobSearch', ['ui.router']);
 
 jobSearch.config(function($stateProvider, $urlRouterProvider) {
 
-    $urlRouterProvider.otherwise('/home')
+    $urlRouterProvider.otherwise('/welcome')
 
     $stateProvider
 
-    .state('home', {
-            url: '/home',
-            templateUrl: 'partials/home.html'
+    .state('welcome', {
+            url: '/welcome',
+            templateUrl: 'partials/welcome.html'
         })
 })
