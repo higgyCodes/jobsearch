@@ -15,11 +15,11 @@ img.navbar-brand {
 } */
 
 
-/* {
+* {
 	border-width: 1px;
 	border-color: black;
 	border-style: solid;
-} */
+}
  
  /* Colors the navbar, sets the nav radius */
 
@@ -62,6 +62,10 @@ footer.footer {
    border-top-color: #89bdd3;
    border-width: 4px;
    background: #e3e3e3;
+}
+
+div.row.ng-scope {
+	
 }
 
 /* WELCOME SECTION */

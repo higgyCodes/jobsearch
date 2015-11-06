@@ -1,9 +1,10 @@
-<div class="form-group">
-	    <label for="exampleJob">Job</label>
+<!-- Search Structure -->
+<div class="row">
+	<div class="col-md-4">
+		<div class="form-group">
 	    <input ng-model="entry.jobtitle" class="form-control" id="exampleJob" placeholder="What job are you looking for?">
 	  </div>
 	  <div class="form-group">
-	    <label for="exampleLocation">Location</label>
 	    <input class="form-control" id="exampleLocation" placeholder="Location">
 	  </div>
 	  <!-- Single button -->
@@ -20,7 +21,7 @@
 	    <li><a href="#">Part-time</a></li>
 	    <li><a href="#">Temporary</a></li>
 	  </ul>
-
+	  </div>
 	  <div class="form-group">
 	    <label for="exampleLocation">How much should you be paid?</label>
 	    <label for="exampleLocation">Between</label>
@@ -30,18 +31,15 @@
 	    <input class="form-control" id="exampleLocation" placeholder="topend">
 	  </div>
 	  <div class="form-group">
-	    <label for="exampleInputFile">Area Covered</label>
-	    <input id="exampleInputFile">
-	    <p class="help-block">Example block-level help text here.</p>
+	    <input id="exampleInputFile" placeholder="How far should we search?">
 	  </div>
 	  <div class="checkbox">
-	    <label>
-	      <input type="checkbox"> Check me out
-	    </label>
 	  </div>
 	  <button type="submit" ng-click="gregory()" class="btn btn-default">Submit</button>
 	</form>
 	<!--Controller Test -->
-	<pre>{{test}}</pre>
-	<pre ng-bind="testmodel"></pre>
+</div>
+	</div>
+	<div class="col-md-4"><p>Test</p></div>
+	<div class="col-md-4"></div>
 </div>

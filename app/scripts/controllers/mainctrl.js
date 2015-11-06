@@ -2,9 +2,11 @@ jobSearch.controller('mainCtrl', ['$scope', 'apiFactory',	function($scope, apiFa
 
 $scope.test = "Testrun"
 
-$scope.gregory = function() {
-	console.log($scope.entry)
-}
 
+$scope.submit = function() {
+	console.log("This");
+	console.log($scope.entry)
+
+}
 
 }])

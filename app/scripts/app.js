@@ -10,4 +10,9 @@ jobSearch.config(function($stateProvider, $urlRouterProvider) {
             url: '/welcome',
             templateUrl: 'partials/welcome.html'
         })
+
+    .state('search', {
+            url: '/search',
+            templateUrl: 'partials/search.html'
+        })
 })
