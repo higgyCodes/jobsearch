@@ -1,45 +1,64 @@
 <!-- Search Structure -->
-<div class="row">
-	<div class="col-md-4">
-		<div class="form-group">
-	    <input ng-model="entry.jobtitle" class="form-control" id="exampleJob" placeholder="What job are you looking for?">
-	  </div>
-	  <div class="form-group">
-	    <input class="form-control" id="exampleLocation" placeholder="Location">
-	  </div>
-	  <!-- Single button -->
-	<div class="btn-group">
-	  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-	    Type of Work? <span class="caret"></span>
-	  </button>
-	  <ul class="dropdown-menu">
-	  <li><a href="#">All Types</a></li>
-	    <li role="separator" class="divider"></li>
-	    <li><a href="#">Fulltime</a></li>
-	    <li><a href="#">Contract</a></li>
-	    <li><a href="#">Internship</a></li>
-	    <li><a href="#">Part-time</a></li>
-	    <li><a href="#">Temporary</a></li>
-	  </ul>
-	  </div>
-	  <div class="form-group">
-	    <label for="exampleLocation">How much should you be paid?</label>
-	    <label for="exampleLocation">Between</label>
-	    
-	    <input class="form-control" id="exampleLocation" placeholder="bottomend">
-	    <label for="exampleLocation">and</label>
-	    <input class="form-control" id="exampleLocation" placeholder="topend">
-	  </div>
-	  <div class="form-group">
-	    <input id="exampleInputFile" placeholder="How far should we search?">
-	  </div>
-	  <div class="checkbox">
-	  </div>
-	  <button type="submit" ng-click="gregory()" class="btn btn-default">Submit</button>
-	</form>
-	<!--Controller Test -->
-</div>
+<div ng-controller="MainCtrl" class="container-fluid">
+	<div class="row">
+	<!-- Fist Seach Section on Left -->
+		<div class="col-md-4">
+			<div class="form-group">
+		    	<input ng-model="entry.jobtitle" class="form-control" id="exampleJob" placeholder="What job are you looking for?">
+		  	</div>
+		  	<div class="form-group">
+		    	<input class="form-control" id="exampleLocation" placeholder="Location">
+		  	</div>
+		  <!-- Single button -->
+			<div class="btn-group">
+		  		<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Type of Work? <span class="caret"></span>
+		    	</button>
+			  	<ul class="dropdown-menu">
+				  	<li><a href="#">All Types</a></li>
+				    <li role="separator" class="divider"></li>
+				    <li><a href="#">Fulltime</a></li>
+				    <li><a href="#">Contract</a></li>
+				    <li><a href="#">Internship</a></li>
+				    <li><a href="#">Part-time</a></li>
+				    <li><a href="#">Temporary</a></li>
+			  	</ul>
+		  	</div>
+		  	<div class="form-group">
+			    <label for="exampleLocation">How much should you be paid?</label>
+			    <label for="exampleLocation">Between</label>
+			    <input class="form-control" id="exampleLocation" placeholder="bottomend">
+			    <label for="exampleLocation">and</label>
+			    <input class="form-control" id="exampleLocation" placeholder="topend">
+		  	</div>
+		  	<div class="form-group">
+		    	<input id="exampleInputFile" placeholder="How far should we search?">
+		  	</div>
+		  	<button type="submit" ng-click="gregory()" class="btn btn-default">Submit</button>
+		</div>
+		<!--Controller Test -->
+		<div class="col-md-4">
+				<div class="jumbotron">
+					<div ng-repeat="entry in entries">
+					<h3 ng-click="select(entry)" href=""> {{entry.position_title}}</h3>
+					<h4 ng-hide="entry.locations[1]"> {{entry.locations[0]}} </h4>
+					<h4 ng-show="entry.locations[1]"> Multiple Locations </h4>
+					</div>
+				</div>
+		</div>
+		<div class="col-md-4">
+			<div class="jumbotron" ng-show="selected">
+			<h2> {{selected.position_title}} </h2>
+				<h5> {{selected.locations}} </h5>
+				<h5> {{selected.organization_name}} </h5>
+
+				<h5> Start Date: {{selected.start_date}} </h5>
+				<h5> End Date: {{selected.end_date}} </h5>
+				<h5> Minimum Pay: {{selected.minimum}} </h5>
+				<h5> Maximum Pay: {{selected.maximum}} </h5>
+
+
+
+			</div>
+		</div>
 	</div>
-	<div class="col-md-4"><p>Test</p></div>
-	<div class="col-md-4"></div>
 </div>
