@@ -2,10 +2,15 @@ jobSearch.controller('MainCtrl', ['$scope', 'apiFactory',	function($scope, apiFa
 
 $scope.test = "test"
 
-  apiFactory.async().then(function(d) {
+
+$scope.submit = function() {
+
+  	apiFactory.submission($scope.entry).then(function(d) {
     $scope.entries = d;
     console.log(d)
   });
+
+}
 
   $scope.select = function(selection) {
   	$scope.selected = selection

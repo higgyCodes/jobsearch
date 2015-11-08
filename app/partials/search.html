@@ -2,49 +2,95 @@
 <div ng-controller="MainCtrl" class="container-fluid">
 	<div class="row">
 	<!-- Fist Seach Section on Left -->
+		<div class="col-md-4 ">
+			<div class="jumbotron">
+				<form class="container">
+				<!-- Job Type -->
+						<h3> What govJob are you seeking? </h3>
+						<div class="form-group">
+					    	<input ng-model="entry.jobtitle" class="form-control" id="exampleJob" placeholder="Job Title?">
+					  	</div>
+					  	<!-- Location -->
+					  	<div class="form-group">
+					    	<input ng-model="entry.location" class="form-control" id="exampleLocation" placeholder="Location?">
+					  	</div>
+					  	<!-- Department -->
+					  	<div class="form-group">
+					    	<input ng-model="entry.department" class="form-control" id="exampleJob" placeholder="Department?">
+					  	</div>
+					  	<!-- Part Time Full Time -->
+					  	<div class="row">
+						  	<div class="btn-group  col-md-12">
+				  				<label>
+				    				<input ng-model="entry.time" value="part-time" type="radio"> Part-Time
+				  				</label>
+				  				<label>
+				    				<input ng-model="entry.time" value="full-time" type="radio"> Full-Time
+				  				</label>
+				  				<label>
+				    				<input ng-model="entry.time" value="" type="radio" checked> Both
+				  				</label>
+				  				<!-- Fed or State -->
+							</div>
+						  	<div class="btn-group col-md-12">
+				  				<label>
+				    				<input ng-model="entry.level" value="&tags=federal" type="radio"> Federal
+				  				</label>
+				  				<label>
+				    				<input ng-model="entry.level" value="&tags=state" type="radio"> State
+				  				</label>
+				  				<label>
+				    				<input ng-model="entry.level" value="" type="radio" checked> Both
+				  				</label>
+			  				</div>
+						</div>
+						<!-- Pay Range -->
+					  	<div class="form-group container">
+					  	<div class="row">
+						    <label for="exampleLocation">How much should you be paid?</label>
+						    <label for="exampleLocation">Between</label>
+							<div class="input-group">
+		  						<span class="input-group-addon">$</span>
+		  						<input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" ng-model="entry.minamount">
+		  						<span class="input-group-addon">.00</span>
+							</div>
+		  					<label class="col-md-12">and</label>
+						    <div class="input-group">
+		  						<span class="input-group-addon">$</span>
+		  						<input type="text" class="form-control" ng-model="entry.maxamount" aria-label="Amount (to the nearest dollar)">
+		  						<span class="input-group-addon">.00</span>
+							</div>
+							<div class="btn-group  col-md-12">
+				  				<label>
+				    				<input type="radio" ng-model="entry.paytype" value="hourly"> Per Hour
+				  				</label>
+				  				<label>
+				    				<input type="radio" ng-model="entry.paytype" value="yearly" checked> Per Year
+				  				</label>
+				  				<!-- Fed or State -->
+							</div>
+						</div>
+				  	</div>
+					<!-- Submit -->
+				  	<button type="submit" ng-click="submit()" class="btn btn-default">Submit</button>
+				</form>
+				</div>
+			</div>
+
+			<!-- Job List (Column Two) -->
 		<div class="col-md-4">
-			<div class="form-group">
-		    	<input ng-model="entry.jobtitle" class="form-control" id="exampleJob" placeholder="What job are you looking for?">
-		  	</div>
-		  	<div class="form-group">
-		    	<input class="form-control" id="exampleLocation" placeholder="Location">
-		  	</div>
-		  <!-- Single button -->
-			<div class="btn-group">
-		  		<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Type of Work? <span class="caret"></span>
-		    	</button>
-			  	<ul class="dropdown-menu">
-				  	<li><a href="#">All Types</a></li>
-				    <li role="separator" class="divider"></li>
-				    <li><a href="#">Fulltime</a></li>
-				    <li><a href="#">Contract</a></li>
-				    <li><a href="#">Internship</a></li>
-				    <li><a href="#">Part-time</a></li>
-				    <li><a href="#">Temporary</a></li>
-			  	</ul>
-		  	</div>
-		  	<div class="form-group">
-			    <label for="exampleLocation">How much should you be paid?</label>
-			    <label for="exampleLocation">Between</label>
-			    <input class="form-control" id="exampleLocation" placeholder="bottomend">
-			    <label for="exampleLocation">and</label>
-			    <input class="form-control" id="exampleLocation" placeholder="topend">
-		  	</div>
-		  	<div class="form-group">
-		    	<input id="exampleInputFile" placeholder="How far should we search?">
-		  	</div>
-		  	<button type="submit" ng-click="gregory()" class="btn btn-default">Submit</button>
-		</div>
-		<!--Controller Test -->
-		<div class="col-md-4">
-				<div class="jumbotron">
-					<div ng-repeat="entry in entries">
-					<h3 ng-click="select(entry)" href=""> {{entry.position_title}}</h3>
+				<div class="jumbotron searchresults">
+					<div ng-click="select(entry)" ng-repeat="entry in entries">
+					<!-- Line break -->
+					<div class="linebreaker" ng-if="$index!=0"></div>
+					<!-- Content-->
+					<h3 > {{entry.position_title}}</h3>
 					<h4 ng-hide="entry.locations[1]"> {{entry.locations[0]}} </h4>
 					<h4 ng-show="entry.locations[1]"> Multiple Locations </h4>
 					</div>
 				</div>
 		</div>
+		<!-- Detailed Job Section -->
 		<div class="col-md-4">
 			<div class="jumbotron" ng-show="selected">
 			<h2> {{selected.position_title}} </h2>
@@ -55,9 +101,6 @@
 				<h5> End Date: {{selected.end_date}} </h5>
 				<h5> Minimum Pay: {{selected.minimum}} </h5>
 				<h5> Maximum Pay: {{selected.maximum}} </h5>
-
-
-
 			</div>
 		</div>
 	</div>

@@ -15,11 +15,11 @@ img.navbar-brand {
 } */
 
 
-* {
+/* {
 	border-width: 1px;
 	border-color: black;
 	border-style: solid;
-}
+}*/
  
  /* Colors the navbar, sets the nav radius */
 
@@ -53,10 +53,10 @@ div.form-group {
 }
 
 footer.footer {
-   position:fixed;
+   position: fixed;
    left:0px;
+   height: 60px;
    bottom:0px;
-   height:50px;
    width:100%;
    border-top-style: solid;
    border-top-color: #89bdd3;
@@ -88,4 +88,40 @@ section.question {
 
 :-ms-input-placeholder {  
    text-align: center; 
+}
+/* SEARCH SECTION */
+ h3 {
+ 	margin-top: 0px;
+ }
+
+ div.form-group {
+ 	margin-bottom: 0px;
+ 	padding: 5px;
+ }
+
+div.container-fluid .jumbotron {
+	padding: 15px;
+	padding-right:	15px;
+	padding-left: 15px;
+}
+form.container {
+	padding-right: 0px;
+	padding-left: 0px;
+}
+
+div.jumbotron.searchresults{
+ cursor: pointer; 
+}
+
+div.jumbotron {
+height: 460px;
+max-height: 460px;
+overflow: scroll
+}
+
+div.linebreaker {
+	border-top: solid 1px #9ad3de;
+	margin-bottom: 8px;
+	margin-left: 3px;
+	margin-right: 3px;
 }
