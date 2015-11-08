@@ -1,7 +1,14 @@
 jobSearch.controller('MainCtrl', ['$scope', 'apiFactory',	function($scope, apiFactory){
 
 $scope.test = "test"
-
+$scope.predicate = ''
+$scope.reverse = true;
+      
+      $scope.order = function(predicate) {
+        $scope.reverse = ($scope.predicate === predicate) ? !$scope.reverse : false;
+        console.log(predicate)
+        $scope.predicate = predicate;
+      };
 
 $scope.submit = function() {
 

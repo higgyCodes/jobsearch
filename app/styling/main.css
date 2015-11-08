@@ -15,11 +15,11 @@ img.navbar-brand {
 } */
 
 
-/* {
+* {
 	border-width: 1px;
 	border-color: black;
 	border-style: solid;
-}*/
+}
  
  /* Colors the navbar, sets the nav radius */
 
@@ -94,6 +94,10 @@ section.question {
  	margin-top: 0px;
  }
 
+ h6 {
+ 	text-align: center; 
+ }
+
  div.form-group {
  	margin-bottom: 0px;
  	padding: 5px;
@@ -125,3 +129,9 @@ div.linebreaker {
 	margin-left: 3px;
 	margin-right: 3px;
 }
+  .sortorder:after {
+    content: '\25b2';
+  }
+  .sortorder.reverse:after {
+    content: '\25bc';
+  }

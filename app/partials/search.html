@@ -80,7 +80,25 @@
 			<!-- Job List (Column Two) -->
 		<div class="col-md-4">
 				<div class="jumbotron searchresults">
-					<div ng-click="select(entry)" ng-repeat="entry in entries">
+				<div class="container">
+					<div class="row">
+						<h5 class="col-md-12"> Sort By:</h5>
+						<pre>"Sorting Predicate = "{{predicate}}</pre>
+						<div class="col-md-4">
+						<h6 ng-click="order('start_date')"> Start Date</h6>  
+						<span class="sortorder" ng-show="predicate === 'start_date'" ng-class="{reverse:reverse}"></span>
+						</div>
+						<div class="col-md-4">
+						<h6 ng-click="order('minimum')"> Wage </h6>
+						<span class="sortorder" ng-show="predicate === 'minimum'" ng-class="{reverse:reverse}"></span>
+						</div>
+						<div class="col-md-4">
+						<h6 ng-click="order('')"> Relevance </h6>
+						<span class="sortorder" ng-show="predicate === ''" ng-class="{reverse:reverse}"></span>
+						</div>
+					</div>
+				</div>
+					<div ng-click="select(entry)" ng-repeat="entry in entries | orderBy:predicate:reverse">
 					<!-- Line break -->
 					<div class="linebreaker" ng-if="$index!=0"></div>
 					<!-- Content-->
