@@ -1,8 +1,6 @@
-jobSearch.controller('MainCtrl', ['$scope', 'apiFactory',	function($scope, apiFactory){
-
+jobSearch.controller('MainCtrl', ['$rootScope','$scope', 'apiFactory',	function($rootScope, $scope, apiFactory){
 	$scope.predicate = ''
 	$scope.reverse = true;
-    
     //Orders the entries by a dynamic predicate
     $scope.order = function(predicate) {
 	    $scope.reverse = ($scope.predicate === predicate) ? !$scope.reverse : false;
@@ -12,17 +10,18 @@ jobSearch.controller('MainCtrl', ['$scope', 'apiFactory',	function($scope, apiFa
 
 	// Filters out entries outside minimum payrate selected
 	$scope.payrate = function(result) {
-		if (result.minimum > $scope.search.minamount || $scope.search.minamount == undefined) {
+		if (result.minimum > $scope.entry.minamount || $scope.entry.minamount == undefined) {
 			return true;
 		} 
 	}
 
 	// Runs API search after parsing input
 	$scope.submit = function() {
-		console.log($scope.search.jobtitle)
-	  	apiFactory.submission($scope.search).then(function(data) {
-	    $scope.entries = data;
-		});
+	  	apiFactory.submission($scope.entry).then(function(d) {
+	    $scope.entries = d;
+	    console.log(d)
+	    $scope.$broadcast('dataReceived', [1,2,3]);
+  	});
 	}
 
 	// Creates selected section in the third column

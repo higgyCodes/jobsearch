@@ -42,12 +42,16 @@ jobSearch.factory('apiFactory', ['$http', function($http){
       console.log(urlfunc(entry))
       var promise = $http.get(urlfunc(entry))
       .then(function (response) {
-        console.log(response);
+        service.data = response.data;
         return response.data;
       });
       // Return the promise to the controller
+      
       return promise;
      }
   
+
+
+
   return service;
 }])

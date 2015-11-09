@@ -18,7 +18,6 @@ jobSearch.config(function($stateProvider, $urlRouterProvider) {
 
     	.state('search.results', {
     			url: '/results',
-    			templateURL: 'partials/search.results.html',
-    			controller: 'SearchCtrl'
+    			templateUrl: 'partials/search/results.html'
     	})
 })
