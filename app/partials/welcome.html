@@ -1,18 +1,18 @@
 
-	<div ng-controller="MainCtrl" class="container-fluid">
+	<div class="container-fluid">
 		<div class="row">
 			<aside class="col-md-4"></aside>
 			<section class="col-md-4 question">
 				<div class="input-group">
 					<h2> Lets find all the </h2>
-	  				<input type="text" class="form-control welcome" placeholder="your profession" aria-describedby="basic-addon1">
+	  				<input ng-model="entry.jobtitle" class="form-control" id="exampleJob" placeholder="Job Title?">
 	  				<h2> positions near you! </h2>
 				</div>
 				<div>
 					<div class="btn-group"  role="group" aria-label="Search">
-	  					<button type="submit" ui-sref="search" class="btn btn-default">Submit</button>
+	  					<button type="submit" ng-click="submit()" ui-sref="search.results" class="btn btn-default">Submit</button>
 					</div>
-					<h4>Use <button type="button" class="btn btn-default">Advanced Search</button> to dig a little deeper!</h4>
+					<h4>Use <button type="button" ui-sref="search" class="btn btn-default">Advanced Search</button> to dig a little deeper!</h4>
 			</section>
 			<aside class="col-md-4"></aside>
 		</div>

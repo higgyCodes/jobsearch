@@ -2,7 +2,7 @@
 <div class="container-fluid">
 	<div class="row">
 	<!-- Fist Seach Section on Left -->
-		<div ng-controller="MainCtrl">
+		<div ng-controller="SearchCtrl">
 			<div class="col-md-4 ">
 				<div class="jumbotron">
 					<form class="container">
@@ -61,7 +61,7 @@
 					<!-- Submit -->
 				  	<button type="submit" ui-sref="search.results" ng-click="submit()" class="btn btn-default">Submit</button>
 				</form>
-				<h6 ui-sref="">Back to Welcome Screen</h6>
+				<h6 ui-sref="welcome">Back to Welcome Screen</h6>
 				</div>
 		</div>
 			<!-- Results (Column Two & Three) -->

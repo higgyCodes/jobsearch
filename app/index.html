@@ -23,7 +23,7 @@
 	<body ng-app="jobSearch">
 
 	<!-- Navbar Header -->
-	<div ng-controller="MainCtrl">
+	<div ng-controller="welcomeCtrl">
 		<nav class="navbar navbar-default">
   			<div class="container-fluid header">
       			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
@@ -38,15 +38,16 @@
 		      <div class="col-md-4"></div>
     		</div><!-- /.navbar-collapse -->
   	</nav>
-  	</div><!-- /.container-fluid -->
+  	<!-- /.container-fluid -->
 
 
 
-<div ui-view></div>
+		<div ui-view></div>
 
-
-<footer class="footer">
+	</div>
+	<footer class="footer">
 			<div class="col-md-6">
+			<h6> A site designed by Patrick Higgins </h6>
 			</div>
 			<div class="col-md-6">
 		</div>
@@ -58,8 +59,8 @@
 
 <!--Build-->
 <script type="text/javascript" src="scripts/app.js"></script>
-<script type="text/javascript" src="scripts/controllers/mainctrl.js"></script>
-<script type="text/javascript" src="scripts/controllers/resultsctrl.js"></script>
+<script type="text/javascript" src="scripts/controllers/welcomectrl.js"></script>
+<script type="text/javascript" src="scripts/controllers/searchctrl.js"></script>
 <script type="text/javascript" src="scripts/services/apifactory.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 

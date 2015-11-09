@@ -1,22 +1,22 @@
 
 <div class="container">
-	<div ng-controller="ResultsCtrl" class="row">
+	<div class="row">
 			<div class="col-md-4">
 				<div class="jumbotron searchresults">
 					<div class="container">
 						<div class="row">
-						<h3> Test </h3>
+						<h3> Results </h3>
 							<h5 class="col-md-12"> Sort By:</h5>
 							<div class="orderchange col-md-4">
-							<h6 class="orderchange" ng-click="order('start_date')"> Start Date  
-							<span class="sortorder" ng-show="predicate === 'start_date'" ng-class="{reverse:reverse}"></span></h6>
+								<h6 class="orderchange" ng-click="order('start_date')"> Start Date  
+								<span class="sortorder" ng-show="predicate === 'start_date'" ng-class="{reverse:reverse}"></span></h6>
 							</div>
 							<div class="orderchange col-md-4">
-							<h6 class="orderchange" ng-click="order('minimum')"> Wage 
-							<span class="sortorder" ng-show="predicate === 'minimum'" ng-class="{reverse:reverse}"></span></h6>
+								<h6 class="orderchange" ng-click="order('minimum')"> Wage 
+								<span class="sortorder" ng-show="predicate === 'minimum'" ng-class="{reverse:reverse}"></span></h6>
 							</div>
 							<div class="orderchange col-md-4">
-							<h6 class="orderchange" ng-click="order('')"> Relevance</h6>
+								<h6 class="orderchange" ng-click="order('')"> Relevance</h6>
 							</div>
 						</div>
 						<div ng-click="select(entry)" ng-repeat="entry in entries | orderBy:predicate:reverse ">

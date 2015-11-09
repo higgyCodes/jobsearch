@@ -1,6 +1,9 @@
-jobSearch.controller('MainCtrl', ['$rootScope','$scope', 'apiFactory',	function($rootScope, $scope, apiFactory){
+jobSearch.controller('SearchCtrl', ['$scope', 'apiFactory',	function($scope, apiFactory){
 	$scope.predicate = ''
 	$scope.reverse = true;
+
+    
+
     //Orders the entries by a dynamic predicate
     $scope.order = function(predicate) {
 	    $scope.reverse = ($scope.predicate === predicate) ? !$scope.reverse : false;
@@ -16,13 +19,6 @@ jobSearch.controller('MainCtrl', ['$rootScope','$scope', 'apiFactory',	function(
 	}
 
 	// Runs API search after parsing input
-	$scope.submit = function() {
-	  	apiFactory.submission($scope.entry).then(function(d) {
-	    $scope.entries = d;
-	    console.log(d)
-	    $scope.$broadcast('dataReceived', [1,2,3]);
-  	});
-	}
 
 	// Creates selected section in the third column
 	$scope.select = function(selection) {
@@ -32,6 +28,14 @@ jobSearch.controller('MainCtrl', ['$rootScope','$scope', 'apiFactory',	function(
 	if ($scope.entry === true) {
 		$scope.submit();
 	}
+
+	var welc = function() {
+		console.log($scope.entry)
+		if ($scope.entry == true) {
+			$scope.submit()
+		}
+	}
+	welc()
 
 }]);
 
