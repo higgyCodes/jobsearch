@@ -1,4 +1,4 @@
-/* Color pallette
+/* Color palette
 
 Grey: #c9c9c9;
 Light Grey: #e3e3e3;
@@ -129,6 +129,12 @@ div.linebreaker {
 	margin-left: 3px;
 	margin-right: 3px;
 }
+
+.orderchange {
+	padding-left: 0px;
+	padding-right: 0px;
+}
+
   .sortorder:after {
     content: '\25b2';
   }

@@ -1,125 +1,74 @@
 <!-- Search Structure -->
-<div ng-controller="MainCtrl" class="container-fluid">
+<div class="container-fluid">
 	<div class="row">
 	<!-- Fist Seach Section on Left -->
-		<div class="col-md-4 ">
+		<div ng-controller="MainCtrl" class="col-md-4 ">
 			<div class="jumbotron">
 				<form class="container">
 				<!-- Job Type -->
 						<h3> What govJob are you seeking? </h3>
 						<div class="form-group">
-					    	<input ng-model="entry.jobtitle" class="form-control" id="exampleJob" placeholder="Job Title?">
+					    	<input ng-model="search.jobtitle" class="form-control" id="exampleJob" placeholder="Job Title?">
 					  	</div>
 					  	<!-- Location -->
 					  	<div class="form-group">
-					    	<input ng-model="entry.location" class="form-control" id="exampleLocation" placeholder="Location?">
+					    	<input ng-model="search.location" class="form-control" id="exampleLocation" placeholder="Location?">
 					  	</div>
 					  	<!-- Department -->
 					  	<div class="form-group">
-					    	<input ng-model="entry.department" class="form-control" id="exampleJob" placeholder="Department?">
+					    	<input ng-model="search.department" class="form-control" id="exampleJob" placeholder="Department?">
 					  	</div>
 					  	<!-- Part Time Full Time -->
 					  	<div class="row">
 						  	<div class="btn-group  col-md-12">
 				  				<label>
-				    				<input ng-model="entry.time" value="part-time" type="radio"> Part-Time
+				    				<input ng-model="search.time" value="part-time" type="radio"> Part-Time
 				  				</label>
 				  				<label>
-				    				<input ng-model="entry.time" value="full-time" type="radio"> Full-Time
+				    				<input ng-model="search.time" value="full-time" type="radio"> Full-Time
 				  				</label>
 				  				<label>
-				    				<input ng-model="entry.time" value="" type="radio" checked> Both
+				    				<input ng-model="search.time" value="" type="radio" checked> Both
 				  				</label>
 				  				<!-- Fed or State -->
 							</div>
 						  	<div class="btn-group col-md-12">
 				  				<label>
-				    				<input ng-model="entry.level" value="&tags=federal" type="radio"> Federal
+				    				<input ng-model="search.level" value="&tags=federal" type="radio"> Federal
 				  				</label>
 				  				<label>
-				    				<input ng-model="entry.level" value="&tags=state" type="radio"> State
+				    				<input ng-model="search.level" value="&tags=state" type="radio"> State
 				  				</label>
 				  				<label>
-				    				<input ng-model="entry.level" value="" type="radio" checked> Both
+				    				<input ng-model="search.level" value="" type="radio" checked> Both
 				  				</label>
 			  				</div>
 						</div>
 						<!-- Pay Range -->
 					  	<div class="form-group container">
 					  	<div class="row">
-						    <label for="exampleLocation">How much should you be paid?</label>
-						    <label for="exampleLocation">Between</label>
+						    <h5 for="exampleLocation">What is your minimum rate of pay?</h5>
 							<div class="input-group">
 		  						<span class="input-group-addon">$</span>
-		  						<input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" ng-model="entry.minamount">
-		  						<span class="input-group-addon">.00</span>
-							</div>
-		  					<label class="col-md-12">and</label>
-						    <div class="input-group">
-		  						<span class="input-group-addon">$</span>
-		  						<input type="text" class="form-control" ng-model="entry.maxamount" aria-label="Amount (to the nearest dollar)">
+		  						<input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" ng-model="search.minamount">
 		  						<span class="input-group-addon">.00</span>
 							</div>
 							<div class="btn-group  col-md-12">
 				  				<label>
-				    				<input type="radio" ng-model="entry.paytype" value="hourly"> Per Hour
+				    				<h6>(Either by hourly or by salary)</h6>
 				  				</label>
-				  				<label>
-				    				<input type="radio" ng-model="entry.paytype" value="yearly" checked> Per Year
-				  				</label>
-				  				<!-- Fed or State -->
 							</div>
 						</div>
 				  	</div>
 					<!-- Submit -->
-				  	<button type="submit" ng-click="submit()" class="btn btn-default">Submit</button>
+				  	<button type="submit" ui-sref="search.results" class="btn btn-default">Submit</button>
 				</form>
 				</div>
 			</div>
 
-			<!-- Job List (Column Two) -->
-		<div class="col-md-4">
-				<div class="jumbotron searchresults">
-				<div class="container">
-					<div class="row">
-						<h5 class="col-md-12"> Sort By:</h5>
-						<pre>"Sorting Predicate = "{{predicate}}</pre>
-						<div class="col-md-4">
-						<h6 ng-click="order('start_date')"> Start Date</h6>  
-						<span class="sortorder" ng-show="predicate === 'start_date'" ng-class="{reverse:reverse}"></span>
-						</div>
-						<div class="col-md-4">
-						<h6 ng-click="order('minimum')"> Wage </h6>
-						<span class="sortorder" ng-show="predicate === 'minimum'" ng-class="{reverse:reverse}"></span>
-						</div>
-						<div class="col-md-4">
-						<h6 ng-click="order('')"> Relevance </h6>
-						<span class="sortorder" ng-show="predicate === ''" ng-class="{reverse:reverse}"></span>
-						</div>
-					</div>
-				</div>
-					<div ng-click="select(entry)" ng-repeat="entry in entries | orderBy:predicate:reverse">
-					<!-- Line break -->
-					<div class="linebreaker" ng-if="$index!=0"></div>
-					<!-- Content-->
-					<h3 > {{entry.position_title}}</h3>
-					<h4 ng-hide="entry.locations[1]"> {{entry.locations[0]}} </h4>
-					<h4 ng-show="entry.locations[1]"> Multiple Locations </h4>
-					</div>
-				</div>
-		</div>
-		<!-- Detailed Job Section -->
-		<div class="col-md-4">
-			<div class="jumbotron" ng-show="selected">
-			<h2> {{selected.position_title}} </h2>
-				<h5> {{selected.locations}} </h5>
-				<h5> {{selected.organization_name}} </h5>
-
-				<h5> Start Date: {{selected.start_date}} </h5>
-				<h5> End Date: {{selected.end_date}} </h5>
-				<h5> Minimum Pay: {{selected.minimum}} </h5>
-				<h5> Maximum Pay: {{selected.maximum}} </h5>
+			<!-- Results (Column Two & Three) -->
+			<div class='col-md-8'>
+				<div ui-view></div>
 			</div>
-		</div>
 	</div>
 </div>

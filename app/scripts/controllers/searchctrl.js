@@ -1,4 +1,4 @@
-jobSearch.controller('MainCtrl', ['$scope', 'apiFactory',	function($scope, apiFactory){
+jobSearch.controller('SearchCtrl', ['$scope', 'apiFactory',	function($scope, apiFactory){
 
 	$scope.predicate = ''
 	$scope.reverse = true;
@@ -17,6 +17,7 @@ jobSearch.controller('MainCtrl', ['$scope', 'apiFactory',	function($scope, apiFa
 		} 
 	}
 
+
 	// Runs API search after parsing input
 	$scope.submit = function() {
 		console.log($scope.search.jobtitle)
@@ -30,27 +31,4 @@ jobSearch.controller('MainCtrl', ['$scope', 'apiFactory',	function($scope, apiFa
 	  	$scope.selected = selection
 	}
 
-	if ($scope.entry === true) {
-		$scope.submit();
-	}
-
 }]);
-
-
-
-// function applyRemoteData( newFriends ) {
-//                     $scope.friends = newFriends;
-//                 }
-//                 // I load the remote data from the server.
-//                 function loadRemoteData() {
-//                     // The friendService returns a promise.
-//                     friendService.getFriends()
-//                         .then(
-//                             function( friends ) {
-//                                 applyRemoteData( friends );
-//                             }
-//                         )
-//                     ;
-//                 }
-//             }
-//         );
