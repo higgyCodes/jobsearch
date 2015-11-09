@@ -16,6 +16,12 @@ jobSearch.config(function($stateProvider, $urlRouterProvider) {
             templateUrl: 'partials/search.html'
         })
 
+    .state('search.advanced', {
+                url: '/advanced',
+                templateUrl: 'partials/search/advanced.html'
+        })
+
+
     	.state('search.results', {
     			url: '/results',
     			templateUrl: 'partials/search/results.html'

@@ -2,8 +2,6 @@ jobSearch.controller('SearchCtrl', ['$scope', 'apiFactory',	function($scope, api
 	$scope.predicate = ''
 	$scope.reverse = true;
 
-    
-
     //Orders the entries by a dynamic predicate
     $scope.order = function(predicate) {
 	    $scope.reverse = ($scope.predicate === predicate) ? !$scope.reverse : false;
@@ -15,27 +13,15 @@ jobSearch.controller('SearchCtrl', ['$scope', 'apiFactory',	function($scope, api
 	$scope.payrate = function(result) {
 		if (result.minimum > $scope.entry.minamount || $scope.entry.minamount == undefined) {
 			return true;
-		} 
+		}
 	}
-
+	
 	// Runs API search after parsing input
 
 	// Creates selected section in the third column
 	$scope.select = function(selection) {
 	  	$scope.selected = selection
 	}
-
-	if ($scope.entry === true) {
-		$scope.submit();
-	}
-
-	var welc = function() {
-		console.log($scope.entry)
-		if ($scope.entry == true) {
-			$scope.submit()
-		}
-	}
-	welc()
 
 }]);
 

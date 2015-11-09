@@ -2,7 +2,7 @@
 <div class="container">
 	<div class="row">
 			<div class="col-md-4">
-				<div class="jumbotron searchresults">
+				<div ng-show="entries" class="jumbotron searchresults">
 					<div class="container">
 						<div class="row">
 						<h3> Results </h3>
@@ -19,14 +19,17 @@
 								<h6 class="orderchange" ng-click="order('')"> Relevance</h6>
 							</div>
 						</div>
-						<div ng-click="select(entry)" ng-repeat="entry in entries | orderBy:predicate:reverse ">
-							<div ng-if="payrate(entry)">
-								<!-- Creates Line between entries -->
-								<div class="linebreaker" ng-if="$index!=0"></div>
-								<!-- Content-->
-								<h3> {{entry.position_title}}</h3>
-								<h4 ng-hide="entry.locations[1]"> {{entry.locations[0]}} </h4>
-								<h4 ng-show="entry.locations[1]"> Multiple Locations </h4>
+						<div class="linebreaker top"></div>
+						<div class="resultsbox">
+							<div ng-click="select(entry)" ng-repeat="entry in entries | orderBy:predicate:reverse ">
+								<div ng-if="payrate(entry)">
+									<!-- Creates Line between entries -->
+									<div class="linebreaker" ng-if="$index!=0"></div>
+									<!-- Content-->
+									<h3> {{entry.position_title}}</h3>
+									<h4  class="joblist" ng-hide="entry.locations[1]"> {{entry.locations[0]}} </h4>
+									<h4 class="joblist" ng-show="entry.locations[1]"> Multiple Locations </h4>
+								</div>
 							</div>
 						</div>
 					</div>

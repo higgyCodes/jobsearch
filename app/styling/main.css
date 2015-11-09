@@ -15,11 +15,11 @@ img.navbar-brand {
 } */
 
 
-* {
+/* {
 	border-width: 1px;
 	border-color: black;
 	border-style: solid;
-}
+} */
  
  /* Colors the navbar, sets the nav radius */
 
@@ -90,18 +90,39 @@ section.question {
    text-align: center; 
 }
 /* SEARCH SECTION */
+button.welcome {
+	width: 70%;
+	left: 15%;
+}
+
+ h2 {
+ 	text-align: center;
+ }
+
  h3 {
  	margin-top: 0px;
  }
+
+ h4 {
+	text-align: center; 
+ }
+
+h4.joblist {
+	text-align: left;
+}
 
  h6 {
  	text-align: center; 
  }
 
- div.form-group {
+div.form-group {
  	margin-bottom: 0px;
  	padding: 5px;
- }
+}
+
+div.alert {
+	margin-top: 10px
+}
 
 div.container-fluid .jumbotron {
 	padding: 15px;
@@ -114,17 +135,41 @@ form.container {
 }
 
 div.jumbotron.searchresults{
- cursor: pointer; 
+ 	cursor: pointer; 
+}
+
+div.row.welcome {
+	padding: 15px;
+	left: 10%;
+}
+
+div.btn-group.welcome {
+	width: 100%;
+}
+
+h6.return {
+	cursor: pointer; 
+}
+
+div.resultsbox {
+	height: 300px;
+	overflow: scroll;
 }
 
 div.jumbotron {
 height: 460px;
 max-height: 460px;
-overflow: scroll
 }
 
 div.linebreaker {
 	border-top: solid 1px #9ad3de;
+	margin-bottom: 8px;
+	margin-left: 3px;
+	margin-right: 3px;
+}
+
+div.linebreaker.top {
+	border-top: solid 2px #9ad3de;
 	margin-bottom: 8px;
 	margin-left: 3px;
 	margin-right: 3px;
