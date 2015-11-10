@@ -55,6 +55,7 @@ div.form-group {
 footer.footer {
    position: fixed;
    left:0px;
+   right:0px;
    height: 60px;
    bottom:0px;
    width:100%;
@@ -108,6 +109,10 @@ button.welcome {
  }
 
 h4.joblist {
+	text-align: left;
+}
+
+h4.results {
 	text-align: left;
 }
 

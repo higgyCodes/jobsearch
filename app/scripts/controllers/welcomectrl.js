@@ -4,6 +4,7 @@ jobSearch.controller('welcomeCtrl', ['$state', '$scope', 'apiFactory', function(
 	
 	$scope.submit = function() {
 	  	if($scope.entry.jobtitle) {
+	  		$scope.none = null
 	  		console.log("Input Accepted")
 	  		$state.go('search.results')
 	  		apiFactory.submission($scope.entry).then(function(d) {

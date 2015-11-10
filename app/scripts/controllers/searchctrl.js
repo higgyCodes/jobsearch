@@ -10,11 +10,12 @@ jobSearch.controller('SearchCtrl', ['$scope', 'apiFactory',	function($scope, api
 	};
 
 	// Filters out entries outside minimum payrate selected
-	$scope.payrate = function(result) {
-		if (result.minimum > $scope.entry.minamount || $scope.entry.minamount == undefined) {
-			return true;
-		}
-	}
+	$scope.greaterThan = function(prop, val){
+    console.log(prop, val)
+	    return function(item){
+	      if (item[prop] > val) return true;
+	    }
+  	}
 	
 	// Runs API search after parsing input
 

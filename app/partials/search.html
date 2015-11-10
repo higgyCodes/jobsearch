@@ -1,8 +1,9 @@
 <!-- Search Structure -->
 <div class="container-fluid">
-	<div class="row">
+	
 	<!-- Fist Seach Section on Left -->
-		<div ng-controller="SearchCtrl">
+	<div ng-controller="SearchCtrl">
+		<div class="row">
 			<div class="col-md-4 ">
 				<div class="jumbotron">
 					<form class="container">
@@ -48,7 +49,7 @@
 						<!-- Pay Range -->
 					  	<div class="form-group container">
 					  	<div class="row">
-						    <h5 for="exampleLocation">What is your minimum rate of pay?</h5>
+						    <h4 for="exampleLocation">What would you like to be paid?</h4>
 							<div class="input-group">
 		  						<span class="input-group-addon">$</span>
 		  						<input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" ng-model="search.minamount">
@@ -60,6 +61,7 @@
 				  	</div>
 					<!-- Submit -->
 				  	<button type="submit" ui-sref="search.results" ng-click="submit()" class="btn btn-default">Submit</button>
+				  	<span class="alert alert-danger" ng-show="none" role="alert">{{none}}</span>
 				</form>
 				<h6 class="return" ui-sref="welcome">Back to Welcome Screen</h6>
 				</div>
