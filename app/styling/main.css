@@ -30,17 +30,17 @@ img.navbar-brand {
  
 .jumbotron {
 	opacity:0;  /* make things invisible upon start */
-	-webkit-animation:fadeIn ease-in 1;  /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
+	-webkit-animation:fadeIn ease-in 1;  
 	-moz-animation:fadeIn ease-in 1;
 	animation:fadeIn ease-in 1;
  
-	-webkit-animation-fill-mode:forwards;  /* this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
+	-webkit-animation-fill-mode:forwards; 
 	-moz-animation-fill-mode:forwards;
 	animation-fill-mode:forwards;
  
-	-webkit-animation-duration:1s;
-	-moz-animation-duration:1s;
-	animation-duration:1s;
+	-webkit-animation-duration:0.4s;
+	-moz-animation-duration:0.4s;
+	animation-duration:0.4s;
 }
 
 
@@ -94,30 +94,27 @@ div.row.ng-scope {
 
 /* WELCOME SECTION */
 
+div.row.welcome {
+	padding: 15px;
+	left: 10%;
+}
+
+div.btn-group.welcome {
+	width: 100%;
+}
+
+
 section.question {
 	padding-top: 100pt;
 }
 
-::-webkit-input-placeholder {
-   text-align: center;
-}
-
-:-moz-placeholder { /* Firefox 18- */
-   text-align: center;  
-}
-
-::-moz-placeholder {  /* Firefox 19+ */
-   text-align: center;  
-}
-
-:-ms-input-placeholder {  
-   text-align: center; 
-}
 /* SEARCH SECTION */
 button.welcome {
 	width: 70%;
 	left: 15%;
 }
+
+/*** Generic Font Requirements ****/
 
  h2 {
  	text-align: center;
@@ -143,11 +140,36 @@ h4.results {
  	text-align: center; 
  }
 
+
+::-webkit-input-placeholder {
+   text-align: center;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   text-align: center;  
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   text-align: center;  
+}
+
+:-ms-input-placeholder {  
+   text-align: center; 
+}
+
+/* Generic Forms */
+
 div.form-group {
  	margin-bottom: 0px;
  	padding: 5px;
 }
 
+div.jumbotron {
+height: 460px;
+max-height: 460px;
+}
+
+/* Generic Alert */
 div.alert {
 	margin-top: 10px
 }
@@ -166,28 +188,18 @@ div.jumbotron.searchresults{
  	cursor: pointer; 
 }
 
-div.row.welcome {
-	padding: 15px;
-	left: 10%;
-}
-
-div.btn-group.welcome {
-	width: 100%;
-}
 
 h6.return {
 	cursor: pointer; 
 }
 
+/* Generic Results */
 div.resultsbox {
 	height: 300px;
 	overflow: scroll;
 }
 
-div.jumbotron {
-height: 460px;
-max-height: 460px;
-}
+
 
 div.linebreaker {
 	border-top: solid 1px #9ad3de;
@@ -202,6 +214,8 @@ div.linebreaker.top {
 	margin-left: 3px;
 	margin-right: 3px;
 }
+
+/**** ORDER CHANGE ***/
 
 .orderchange {
 	padding-left: 0px;

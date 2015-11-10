@@ -5,13 +5,11 @@ jobSearch.controller('SearchCtrl', ['$scope', 'apiFactory',	function($scope, api
     //Orders the entries by a dynamic predicate
     $scope.order = function(predicate) {
 	    $scope.reverse = ($scope.predicate === predicate) ? !$scope.reverse : false;
-	    console.log(predicate)
 	    $scope.predicate = predicate;
 	};
 
 	// Filters out entries outside minimum payrate selected
 	$scope.greaterThan = function(prop, val){
-    console.log(prop, val)
 	    return function(item){
 	      if (item[prop] > val) { 
 	      	return true;
@@ -20,7 +18,6 @@ jobSearch.controller('SearchCtrl', ['$scope', 'apiFactory',	function($scope, api
   			}
 		}
 	};
-
 
 	// Creates selected section in the third column
 	$scope.select = function(selection) {

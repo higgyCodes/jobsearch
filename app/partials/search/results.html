@@ -2,7 +2,7 @@
 	<div ng-show="entries" class="jumbotron searchresults">
 		<div class="container">
 			<div class="row">
-			<h3> Results </h3>
+				<h3> Results </h3>
 				<h5 class="col-md-12"> Sort By:</h5>
 				<div class="orderchange col-md-4">
 					<h6 class="orderchange" ng-click="order('start_date')"> Start Date  
@@ -17,15 +17,16 @@
 				</div>
 			</div>
 			<div class="linebreaker top"></div>
+			<h4 ng-hide="entries[0]"> I'm sorry, your search yielded no results </h4>
 			<div class="resultsbox">
 				<div ng-click="select(i)" ng-repeat="i in entries | orderBy:predicate:reverse | filter: greaterThan('minimum', search.minamount)">
 					
 						<!-- Creates Line between entries -->
-						<div class="linebreaker" ng-if="$index!=0"></div>
-						<!-- Content-->
-						<h3> {{i.position_title}}</h3>
-						<h4  class="joblist" ng-hide="i.locations[1]"> {{i.locations[0]}} </h4>
-						<h4 class="joblist" ng-show="i.locations[1]"> Multiple Locations </h4>
+					<div class="linebreaker" ng-if="$index!=0"></div>
+					<!-- Content-->
+					<h3> {{i.position_title}}</h3>
+					<h4  class="joblist" ng-hide="i.locations[1]"> {{i.locations[0]}} </h4>
+					<h4 class="joblist" ng-show="i.locations[1]"> Multiple Locations </h4>
 					
 				</div>
 			</div>
