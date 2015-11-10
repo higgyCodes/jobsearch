@@ -21,7 +21,6 @@ jobSearch.controller('SearchCtrl', ['$scope', 'apiFactory',	function($scope, api
 		}
 	};
 
-	// Runs API search after parsing input
 
 	// Creates selected section in the third column
 	$scope.select = function(selection) {
@@ -29,22 +28,3 @@ jobSearch.controller('SearchCtrl', ['$scope', 'apiFactory',	function($scope, api
 	}
 
 }]);
-
-
-
-// function applyRemoteData( newFriends ) {
-//                     $scope.friends = newFriends;
-//                 }
-//                 // I load the remote data from the server.
-//                 function loadRemoteData() {
-//                     // The friendService returns a promise.
-//                     friendService.getFriends()
-//                         .then(
-//                             function( friends ) {
-//                                 applyRemoteData( friends );
-//                             }
-//                         )
-//                     ;
-//                 }
-//             }
-//         );
