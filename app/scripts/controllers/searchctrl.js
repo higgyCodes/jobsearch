@@ -13,10 +13,14 @@ jobSearch.controller('SearchCtrl', ['$scope', 'apiFactory',	function($scope, api
 	$scope.greaterThan = function(prop, val){
     console.log(prop, val)
 	    return function(item){
-	      if (item[prop] > val) return true;
-	    }
-  	}
-	
+	      if (item[prop] > val) { 
+	      	return true;
+	    	} else if (val === undefined) {
+	    	return true
+  			}
+		}
+	};
+
 	// Runs API search after parsing input
 
 	// Creates selected section in the third column
