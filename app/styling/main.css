@@ -90,7 +90,7 @@ img.navbar-brand {
 
 	/* WELCOME SECTION */
 
-	div.row.welcome {
+	.row.welcome {
 		padding: 15px;
 		left: 10%;
 	}
