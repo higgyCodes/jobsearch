@@ -40,16 +40,20 @@ jobSearch.factory('apiFactory', ['$http', function($http){
   	// Makes API call.
     service.submission = function(entry) {
       console.log(urlfunc(entry))
-      var promise = $http.get(urlfunc(entry))
-      .then(function (response) {
-        service.data = response.data;
-        return response.data;
+      var promise = $http({
+          method: 'GET',
+          url: urlfunc(entry)
+      }).then(function successCallback(response) {
+          service.data = response.data;
+          return response.data;
+      }, function errorCallback(response) {
+          console.log(response)
       });
       // Return the promise to the controller
-      
       return promise;
      }
-  
+
+
 
 
 
