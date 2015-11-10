@@ -155,12 +155,12 @@ img.navbar-brand {
 
 	/* Generic Forms */
 
-	div.form-group {
+	.form-group {
 		margin-bottom: 0px;
-		padding: 5px;
+		padding: 10px;
 	}
 
-	div.jumbotron {
+	.jumbotron {
 		height: 460px;
 		max-height: 460px;
 	}
@@ -170,7 +170,7 @@ img.navbar-brand {
 		margin-top: 10px
 	}
 
-	div.container-fluid .jumbotron {
+	.container-fluid.jumbotron {
 		padding: 15px;
 		padding-right:	15px;
 		padding-left: 15px;
@@ -180,17 +180,17 @@ img.navbar-brand {
 		padding-left: 0px;
 	}
 
-	div.jumbotron.searchresults{
+	.searchresults {
 		cursor: pointer; 
 	}
 
 
-	h6.return {
+	.return {
 		cursor: pointer; 
 	}
 
 	/* Generic Results */
-	div.resultsbox {
+	.resultsbox {
 		height: 300px;
 		overflow: scroll;
 	}
