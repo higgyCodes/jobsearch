@@ -33,7 +33,7 @@ jobSearch.factory('apiFactory', ['$http', function($http){
 
   	//attaches dunamic url component to base url
   	var urlfunc = function(entry) {
-  		  var baseurl = 'http://107.170.244.148:5000/jobs/search.json?query='
+  		  var baseurl = 'https://nulltonode.com/jobs/search.json?query='
   	   return baseurl + stringmake(entry)
   	}
 
