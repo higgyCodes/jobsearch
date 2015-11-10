@@ -68,11 +68,13 @@ img.navbar-brand {
 		text-shadow: 2px 2px #c9c9c9;
 	}
 
-	.form-group {
+	div.form-group {
 		border-width: 2px;
 		color: blue;
-		padding: 14px;
 		max-width: 400px;
+		padding: 2px;
+		padding-bottom: 5px;
+
 	}
 
 	footer.footer {
@@ -100,8 +102,10 @@ img.navbar-brand {
 	}
 
 
-	section.question {
-		padding-top: 100pt;
+	.question {
+		padding-top: 80pt;
+		padding-right: 30px;
+		padding-left:30px;
 	}
 
 	/* SEARCH SECTION */
@@ -117,6 +121,7 @@ img.navbar-brand {
 	}
 
 	h3 {
+		text-align: center;
 		margin-top: 0px;
 	}
 
@@ -160,7 +165,7 @@ img.navbar-brand {
 		padding: 10px;
 	}
 
-	.jumbotron {
+	div.jumbotron {
 		height: 460px;
 		max-height: 460px;
 	}
